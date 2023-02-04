@@ -201,3 +201,6 @@ mode "$mode_redshift" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
+exec xinput set-prop "ELAN1300:00 04F3:3087 Touchpad" "libinput Tapping Enabled" 1
+
