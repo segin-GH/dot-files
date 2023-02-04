@@ -17,5 +17,6 @@
     ],
     
     "editor.guides.indentation": false,
+    "editor.renderWhitespace": "boundary"
 
 }
