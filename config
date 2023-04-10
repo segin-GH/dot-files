@@ -66,10 +66,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -184,25 +184,37 @@ bar {
 
 exec_always nitrogen --restore
 
-
-# redshift modes
-#bindsym $mod+q mode "$mode_redshift"
-#set $mode_redshift Set colour temperature: (a)uto, (r)eset, (2)500K, (3)000K, (4)000K, (5)000K
-#set $kill_redshift pkill -9 redshift;
-#mode "$mode_redshift" {
-#    bindsym a exec --no-startup-id "$kill_redshift redshift -P -t 5000:4000", mode "default"
-#    bindsym r exec --no-startup-id "$kill_redshift redshift -x", mode "default"
-#    bindsym 2 exec --no-startup-id "$kill_redshift redshift -P -O 2500", mode "default"
-#    bindsym 3 exec --no-startup-id "$kill_redshift redshift -P -O 3200", mode "default"
-#    bindsym 4 exec --no-startup-id "$kill_redshift redshift -P -O 4000", mode "default"
-#    bindsym 5 exec --no-startup-id "$kill_redshift redshift -P -O 5000", mode "default"
- 
-    # exit mode: "Enter" or "Escape"
-#    bindsym Return mode "default"
-#    bindsym Escape mode "default"
-#}
-
- exec_always redshift -P -O 3500
+exec_always redshift -P -O 3500
 
 exec xinput set-prop "ELAN1300:00 04F3:3087 Touchpad" "libinput Tapping Enabled" 1
+
+bindsym $mod+t exec gnome-terminal
+bindsym $mod+g exec google-chrome
+bindsym $mod+b Workspace number $ws10 exec brave-browser
+bindsym $mod+n exec nautilus
+
+# Disable/Enable Touchpad
+bindsym $mod+F11 exec xinput disable 11
+bindsym $mod+F12 exec xinput enable 11
+
+# Screenshot
+#bindsym Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+#bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+#bindsym Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+
+# Moving workspaces between screens 
+bindsym $mod+p move workspace to output right
+bindsym $mod+o move container to output right
+
+
+#custom
+
+for_window [title=" * esp32master - Visual Studio Code"] move --no-auto-back-and-forth container to workspace number $ws1
+
+for_window [title=" * esp32slave - Visual Studio Code"] move --no-auto-back-and-forth container to workspace number $ws2
+
+for_window [title=" * rpi - Visual Studio Code"] move --no-auto-back-and-forth container to workspace number $ws3
+
+bindsym $mod+c Workspace number $ws1 exec kitty -e /home/bot/hacklab/TestBench/firmware/e32mstr/esp32master ;  exec kitty -e code /home/bot/hacklab/TestBench/firmware/e32mstr/esp32master ; Workspace number $ws2 exec kitty -e /home/bot/hacklab/TestBench/firmware/e32slv/esp32slave ; exec kitty -e code /home/bot/hacklab/TestBench/firmware/e32slv/esp32slave; Workspace number $ws3 exec kitty -e /home/bot/hacklab/TestBench/firmware/rpi ; exec kitty -e code /home/bot/hacklab/TestBench/firmware/rpi
+
 
