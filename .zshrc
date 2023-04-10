@@ -17,7 +17,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -107,24 +106,29 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vim='vim -c "colorscheme desert" '
+alias vim='vim'
 set -o vi
 export EDITOR='vim'
 
-alias jnb="jupyter notebook"
-alias jlb="jupyter lab"
+alias gloc="git config user.name segin-hls ; git config user.email segin@hacklab.solutions"
+alias jnb="source _enve/bin/activate; jupyter notebook"
+alias jlb="source _enve/bin/activate; jupyter lab"
 alias b="byobu"
-alias idf_v4.4=". $HOME/esp/esp-idf-v4.4/export.sh"
+alias idf_v4.4=". $HOME/esp/esp-idf/export.sh"
 alias idf_v5.0=". $HOME/esp/esp-idf-v5.0/export.sh"
 alias idf="idf.py"
 alias idfb="idf.py build"
 alias idffmp="idf.py -p /dev/ttyUSB0 flash monitor"
+alias idffmp1="idf.py -p /dev/ttyUSB1 flash monitor"
 alias idffm="idf.py flash monitor"
 alias idfm="idf.py monitor"
 alias clr="clear"
 alias eag="cd /home/bot/app/eagle-9.6.2; ./eagle"
 alias ovpn-conf="sudo openvpn --config Segin.ovpn"
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+alias gcmt="git commit -a -m '.' "
+alias upug="sudo apt-get update && sudo apt-get upgrade -y"
+alias py="python3"
+alias gdh="git diff HEAD"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
