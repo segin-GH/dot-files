@@ -60,7 +60,20 @@
         
     },
     
-    "python.linting.pylintArgs": ["--disable=C0116", "--disable=W0511" ]
+    "python.linting.pylintArgs": ["--disable=C0116", "--disable=W0511" ],
+
+
+
+"editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope":"string.quoted.docstring.multi.python",
+                "settings": {
+                    "foreground": "#7d7c79" 
+                }
+            }
+        ]
+    }
 }
 
 
