@@ -8,15 +8,59 @@
     "idf.pythonBinPath": "/home/bot/.espressif/python_env/idf4.4_py3.10_env/bin/python",
     "idf.toolsPath": "/home/bot/.espressif",
     "idf.customExtraPaths": "/home/bot/.espressif/tools/xtensa-esp-elf-gdb/11.2_20220823/xtensa-esp-elf-gdb/bin:/home/bot/.espressif/tools/riscv32-esp-elf-gdb/11.2_20220823/riscv32-esp-elf-gdb/bin:/home/bot/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch5-8.4.0/xtensa-esp32-elf/bin:/home/bot/.espressif/tools/xtensa-esp32s2-elf/esp-2021r2-patch5-8.4.0/xtensa-esp32s2-elf/bin:/home/bot/.espressif/tools/xtensa-esp32s3-elf/esp-2021r2-patch5-8.4.0/xtensa-esp32s3-elf/bin:/home/bot/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch5-8.4.0/riscv32-esp-elf/bin:/home/bot/.espressif/tools/esp32ulp-elf/2.35_20220830/esp32ulp-elf/bin:/home/bot/.espressif/tools/cmake/3.23.1/bin:/home/bot/.espressif/tools/openocd-esp32/v0.11.0-esp32-20221026/openocd-esp32/bin:/home/bot/.espressif/tools/ninja/1.10.2",
-    "idf.customExtraVars": "{\"OPENOCD_SCRIPTS\":\"/home/bot/.espressif/tools/openocd-esp32/v0.11.0-esp32-20221026/openocd-esp32/share/openocd/scripts\"}",
+    "idf.customExtraVars": {
+        "OPENOCD_SCRIPTS": "/home/bot/.espressif/tools/openocd-esp32/v0.11.0-esp32-20221026/openocd-esp32/share/openocd/scripts"
+    },
     "idf.gitPath": "/usr/bin/git",
     "cmake.configureOnOpen": false,
     "cSpell.userWords": [
+        "ANYEDGE",
+        "baudrate",
+        "buscfg",
+        "cdev",
+        "Cerial",
+        "Chrono",
+        "chronowrap",
+        "eventloop",
+        "getpid",
+        "gpio",
+        "HACKLAB",
+        "HSPI",
+        "iloc",
+        "IRAM",
         "lightscheduler",
-        "LOGI"
+        "LOGI",
+        "mdns",
+        "mosi",
+        "mstr",
+        "outdent",
+        "parms",
+        "Pharser",
+        "quadhd",
+        "quadwp",
+        "randn",
+        "sclk",
+        "sendstr",
+        "slvcfg",
+        "testbench",
+        "timee",
+        "UART",
+        "Wmissing"
     ],
     
     "editor.guides.indentation": false,
-    "editor.renderWhitespace": "boundary"
-
+    "editor.renderWhitespace": "boundary",
+    "editor.minimap.enabled": false,
+    "explorer.confirmDelete": false,
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "trunk.trunkGrayOutNonBlockingIssues": false,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8",
+        "editor.formatOnType": true
+        
+    },
+    
+    "python.linting.pylintArgs": ["--disable=C0116", "--disable=W0511" ]
 }
+
+
