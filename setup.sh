@@ -35,10 +35,14 @@
 #sudo apt install brave-browser;
 
 #sudo apt update;
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg;
-sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg;
-echo "deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main" | sudo \
-   tee /etc/apt/sources.list.d/vs-code.list;
-sudo apt update;
-sudo apt install code;
+#curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg;
+#sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg;
+#echo "deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main" | sudo \
+#   tee /etc/apt/sources.list.d/vs-code.list;
+#sudo apt update;
+#sudo apt install code;
 
+#sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+#sudo apt-add-repository https://cli.github.com/packages
+#sudo apt update
+#sudo apt install gh
