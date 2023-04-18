@@ -1,4 +1,6 @@
+
 #sudo apt install vim -y;
+#sudo apt install i3 -y;
 #sudo apt install curl -y ;
 
 #curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n;
@@ -7,32 +9,23 @@
 #cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/;
 #sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop;
 #sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop;
- #cp ~/.local/kitty.app/share/applications/kitty.desktop ~/Desktop;
-# sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/Desktop/kitty*.desktop;
-# sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/Desktop/kitty*.desktop;
-# gio set ~/Desktop/kitty*.desktop metadata::trusted true;
-# chmod a+x ~/Desktop/kitty*.desktop;
+#cp ~/.local/kitty.app/share/applications/kitty.desktop ~/Desktop;
+#sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/Desktop/kitty*.desktop;
+#sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/Desktop/kitty*.desktop;
+#gio set ~/Desktop/kitty*.desktop metadata::trusted true;
+#chmod a+x ~/Desktop/kitty*.desktop;
 
-#sudo apt install git -y ;
-#mkdir code;
-#cd code;
-#git clone https://github.com/segin-GH/dot-files.git;
 
 #cd ~/code/dot-files;
 #cp config /home/yui/.config/i3;
 
 #sudo apt install redshift;
-
-#sudo apt install zsh -y;
-# sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
-#sleep 1
-#sudo apt update;
-#which zsh;
+#sudo apt install nitrogen;
 
 #sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg;
 #echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list;
 #sudo apt update;
-#sudo apt install brave-browser;
+#sudo apt install brave-browser -y;
 
 #sudo apt update;
 #curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg;
@@ -46,3 +39,24 @@
 #sudo apt-add-repository https://cli.github.com/packages
 #sudo apt update
 #sudo apt install gh
+
+#sudo apt install zsh -y;
+# sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
+#sleep 1
+#sudo apt update;
+#which zsh;
+#cp ~/code/dot-files/.zshrc  /home/yui/;
+
+#git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k;
+
+#sudo reboot;
+
+#sudo apt-get update;
+#curl https://pyenv.run | zsh;
+#sleep 1;
+#export PATH="$HOME/.pyenv/bin:$PATH" && eval "$(pyenv init --path)" && echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n eval "$(pyenv init -)"\nfi' >> ~/.zshrc;
+#sleep 1;
+#exec $SHELL;
+#pyenv --version;
+#git config --global user.name "segin-GH"
+#git config --global user.email "segin.bytes@gmail.com"
