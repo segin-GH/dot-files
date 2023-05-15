@@ -206,6 +206,21 @@ bindsym $mod+F12 exec xinput enable 11
 bindsym $mod+p move workspace to output right
 bindsym $mod+o move container to output right
 
+bindsym $mod+F5  exec sudo brightnessctl set +5%
+bindsym $mod+F4 exec  sudo brightnessctl set 5%-
+
+## Screenshots
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+
+## Clipboard Screenshots
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+D exec xrandr --output HDMI-1 --mode 1920x1080 --rate 60.00 --right-of eDP-1
+bindsym Ctrl+Shift+F exec xrandr --output HDMI-1 --off
+
 
 #custom
 
@@ -215,6 +230,6 @@ for_window [title=" * esp32slave - Visual Studio Code"] move --no-auto-back-and-
 
 for_window [title=" * rpi - Visual Studio Code"] move --no-auto-back-and-forth container to workspace number $ws3
 
-bindsym $mod+c Workspace number $ws1 exec kitty -e /home/bot/hacklab/TestBench/firmware/e32mstr/esp32master ;  exec kitty -e code /home/bot/hacklab/TestBench/firmware/e32mstr/esp32master ; Workspace number $ws2 exec kitty -e /home/bot/hacklab/TestBench/firmware/e32slv/esp32slave ; exec kitty -e code /home/bot/hacklab/TestBench/firmware/e32slv/esp32slave; Workspace number $ws3 exec kitty -e /home/bot/hacklab/TestBench/firmware/rpi ; exec kitty -e code /home/bot/hacklab/TestBench/firmware/rpi
+bindsym $mod+c Workspace number $ws1 exec kitty -e /home/yui/hacklab/TestBench/firmware/e32mstr/esp32master ;  exec kitty -e code /home/yui/hacklab/TestBench/firmware/e32mstr/esp32master ; Workspace number $ws2 exec kitty -e /home/yui/hacklab/TestBench/firmware/e32slv/esp32slave ; exec kitty -e code /home/yui/hacklab/TestBench/firmware/e32slv/esp32slave; Workspace number $ws3 exec kitty -e /home/yui/hacklab/TestBench/firmware/rpi ; exec kitty -e code /home/yui/hacklab/TestBench/firmware/rpi
 
 
