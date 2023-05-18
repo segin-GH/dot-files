@@ -111,8 +111,8 @@ set -o vi
 export EDITOR='vim'
 
 alias gloc="git config user.name segin-hls ; git config user.email segin@hacklab.solutions"
-alias jnb="source _enve/bin/activate; jupyter notebook"
-alias jlb="source _enve/bin/activate; jupyter lab"
+alias jnb="jupyter notebook"
+alias jlb="jupyter lab"
 alias b="byobu"
 alias idf_v4.4=". $HOME/esp/esp-idf/export.sh"
 alias idf_v5.0=". $HOME/esp/esp-idf-v5.0/export.sh"
@@ -123,12 +123,14 @@ alias idffmp1="idf.py -p /dev/ttyUSB1 flash monitor"
 alias idffm="idf.py flash monitor"
 alias idfm="idf.py monitor"
 alias clr="clear"
-alias eag="cd /home/bot/app/eagle-9.6.2; ./eagle"
+alias eag="cd /home/yui/app/eagle-9.6.2; ./eagle"
 alias ovpn-conf="sudo openvpn --config Segin.ovpn"
 alias gcmt="git commit -a -m '.' "
 alias upug="sudo apt-get update && sudo apt-get upgrade -y"
 alias py="python3"
 alias gdh="git diff HEAD"
+alias gct="git commit -a -m\"$1\""
+alias bb="brave-browser"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -141,6 +143,8 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+
+
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
+ eval "$(pyenv init -)"
 fi
