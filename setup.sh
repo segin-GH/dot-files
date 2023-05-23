@@ -61,7 +61,6 @@
 #sudo apt update;
 #which zsh;
 #cp ~/code/dot-files/.zshrc  /home/yui/;
-
 #git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k;
 
 ## Pyenv setup
@@ -80,7 +79,6 @@
 #git config --global user.email "segin.bytes@gmail.com"
 #git config --global diff.tool vimdiff
 #git config --global pull.rebase true
-
 
 ## FZF
 
