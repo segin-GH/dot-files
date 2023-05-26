@@ -63,7 +63,7 @@
 #cp ~/code/dot-files/.zshrc  /home/yui/;
 #git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k;
 
-## Pyenv setup
+## PYENV
 
 #sudo apt-get update;
 #curl https://pyenv.run | zsh;
@@ -73,7 +73,7 @@
 #exec $SHELL;
 #pyenv --version;
 
-## git
+## GIT CONFIG
 
 #git config --global user.name "segin-GH"
 #git config --global user.email "segin.bytes@gmail.com"
