@@ -28,7 +28,7 @@
 # cd .vim/colors
 # wget https://raw.githubusercontent.com/crusoexia/vim-monokai/master/colors/monokai.vim
 # cp .vimrc /home/yui/
-# cp .zshrc /home/yui/
+# cp current-theme.conf kitty.conf ~/.config/kitty
 
 
 # ## I3 SETUP 
