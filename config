@@ -190,7 +190,7 @@ exec xinput set-prop "ELAN1300:00 04F3:3087 Touchpad" "libinput Tapping Enabled"
 
 bindsym $mod+t exec gnome-terminal
 bindsym $mod+g exec google-chrome
-bindsym $mod+b Workspace number $ws10 exec brave-browser
+bindsym $mod+b Workspace number $ws10 exec chromium
 bindsym $mod+n exec nautilus
 
 # Disable/Enable Touchpad
