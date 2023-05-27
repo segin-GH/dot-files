@@ -1,0 +1,15 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	email = segin.bytes@gmail.com
+	name = segin-GH
+[diff]
+	tool = vimdiff
+[difftool]
+   	 prompt = false
+       	 trustExitCode = true
+[mergetool]
+       	 trustExitCode = true
+[pull]
+	rebase = true
