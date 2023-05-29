@@ -38,6 +38,7 @@
 # sudo apt install lxappearance -y;
 # sudo apt install maim -y;
 # sudo apt install xclip -y;
+# sudo apt install brightnessctl -y;
 
 # ## VSCODE
 
