@@ -50,6 +50,10 @@
 # sudo apt update;
 # sudo apt install code;
 
+# ## BROWSER
+
+# sudo apt install -y chromium-browser
+
 # ## GITHUB
 
 # sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
