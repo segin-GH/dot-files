@@ -86,6 +86,7 @@
 #git config --global user.email "segin.bytes@gmail.com"
 #git config --global diff.tool vimdiff
 #git config --global pull.rebase true
+#git config --global --add difftool.prompt false
 
 ## FZF
 
