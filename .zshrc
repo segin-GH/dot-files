@@ -156,3 +156,7 @@ export FZF_DEFAULT_OPS="--extended"
 
 export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
 
+export OPENAI_API_KEY='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'
+if command -v pyenv 1>/dev/null 2>&1; then
+ eval "$(pyenv init -)"
+fi
