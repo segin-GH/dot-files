@@ -126,12 +126,48 @@ alias idfm1="idf.py -p /dev/ttyUSB1 monitor"
 alias clr="clear"
 alias eag="cd /home/yui/app/eagle-9.6.2; ./eagle"
 alias ovpn-conf="sudo openvpn --config Segin.ovpn"
-alias gcmt="git commit -a -m '.' "
+
+
+git_commit() {
+    if [ -z "$1" ]; then
+        echo "No file to commit baka! :("
+        return 1
+    fi
+
+    if [ -z "$2" ]; then
+        echo "No commit message baka! :("
+        return 1
+    fi
+
+    if [ $# -gt 2 ]; then
+        echo "Too many arguments baka! :("
+        return 1
+    fi
+
+    echo "Committing $1 with message $2 :)"
+    git commit "$1" -m "$2"
+    return 0
+}
+
+alias gcmt="git_commit"
 alias upug="sudo apt-get update && sudo apt-get upgrade -y"
 alias py="python3"
 alias gdh="git diff HEAD"
 alias gct="git commit -a -m\"$1\""
-alias bb="brave-browser"
+alias bb="chromium"
+alias grepr="grep -rin"
+alias grep="grep --color=auto"
+alias get_tb="export PATH=\"/home/yui/hacklab/TestBench/firmware/rpi:\$PATH\""
+alias catcsv="/home/yui/code/pythonScripts/csvTabulatePrint.py"
+alias server="/home/yui/code/pythonScripts/pythonServer.py"
+alias lip="/home/yui/code/pythonScripts/lip.py"
+alias d="sudo docker"
+alias dps="sudo docker ps"
+alias tr="tree"
+alias t="tail"
+alias h="head"
+
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -146,17 +182,12 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
 
-if command -v pyenv 1>/dev/null 2>&1; then
- eval "$(pyenv init -)"
-fi
-
 #fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="--extended"
-
 export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
 
-export OPENAI_API_KEY='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'
-if command -v pyenv 1>/dev/null 2>&1; then
- eval "$(pyenv init -)"
-fi
+# kitty support for ssh
+#
+export TERM=xterm-256color
+
