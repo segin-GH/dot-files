@@ -47,5 +47,28 @@
         "key": "shift+tab",
         "command": "outdent",
         "when": "editorTextFocus && !editorTabMovesFocus"
+    },
+    {
+        "key": "ctrl+i ctrl+i",
+        "command": "github.copilot.acceptCursorPanelSolution",
+        "when": "github.copilot.activated && github.copilot.panelVisible"
+    },
+    {
+        "key": "ctrl+/",
+        "command": "-github.copilot.acceptCursorPanelSolution",
+        "when": "github.copilot.activated && github.copilot.panelVisible"
+    },
+    {
+        "key": "tab",
+        "command": "editor.action.inlineSuggest.commit",
+        "when": "textInputFocus && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorTabMovesFocus"
+    },
+    {
+        "key": "alt+u",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpen"
     }
 ]
