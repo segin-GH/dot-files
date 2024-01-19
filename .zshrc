@@ -119,6 +119,13 @@ alias idf_v5.0=". $HOME/esp/esp-idf-v5.0/export.sh"
 alias idf="idf.py"
 alias idfb="idf.py build"
 alias idffmp="idf.py -p /dev/ttyUSB0 flash monitor"
+
+flash_and_monitor() {
+    idf.py -p /dev/ttyUSB0 flash
+    python3 ~/hacklab/hspl_formatter.py
+}
+
+alias idfz="flash_and_monitor"
 alias idffmp1="idf.py -p /dev/ttyUSB1 flash monitor"
 alias idffm="idf.py flash monitor"
 alias idfm="idf.py -p /dev/ttyUSB0 monitor"
@@ -148,6 +155,7 @@ git_commit() {
     git commit "$1" -m "$2"
     return 0
 }
+
 
 alias gcmt="git_commit"
 alias upug="sudo apt-get update && sudo apt-get upgrade -y"
@@ -191,3 +199,6 @@ export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -prin
 #
 export TERM=xterm-256color
 
+# the fuck
+eval $(thefuck --alias)
+eval $(thefuck --alias fk)
