@@ -70,5 +70,15 @@
     {
         "key": "ctrl+p",
         "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "workbench.action.files.showOpenedFileInNewWindow",
+        "when": "emptyWorkspaceSupport"
+    },
+    {
+        "key": "ctrl+k o",
+        "command": "-workbench.action.files.showOpenedFileInNewWindow",
+        "when": "emptyWorkspaceSupport"
     }
 ]
