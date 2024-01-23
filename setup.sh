@@ -2,7 +2,7 @@
 
 # sudo apt install vim -y;
 # sudo apt install i3 -y;
-# sudo apt install curl -y ;
+# sudo apt install curl -y;
 # sudo apt install wget -y;
 
 # ## KITY
@@ -15,7 +15,7 @@
 # sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop;
 # cp ~/.local/kitty.app/share/applications/kitty.desktop ~/Desktop;
 # sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/Desktop/kitty*.desktop;
-# sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/Desktop/kitty*.desktop;
+ #sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/Desktop/kitty*.desktop;
 # gio set ~/Desktop/kitty*.desktop metadata::trusted true;
 # chmod a+x ~/Desktop/kitty*.desktop;
 
@@ -63,9 +63,9 @@
 
 # ## ZSH
 
-# sudo apt install zsh -y;
-#  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
-# sleep 1
+ #sudo apt install zsh -y;
+ # sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
+ #sleep 1
 # sudo apt update;
 # cp ~/code/dot-files/.zshrc  /home/yui/;
 # git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k;
