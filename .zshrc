@@ -122,7 +122,7 @@ alias idffmp="idf.py -p /dev/ttyUSB0 flash monitor"
 
 flash_and_monitor() {
     idf.py -p /dev/ttyUSB0 flash
-    python3 ~/hacklab/hspl_formatter.py
+    python3 ~/hspl/hspl_log_formatter.py
 }
 
 alias idfz="flash_and_monitor"
