@@ -216,9 +216,9 @@ colors {
 
 exec_always nitrogen --restore
 
-exec_always redshift -P -O 3500
+#exec_always redshift -P -O  3500
 
-exec xinput set-prop "ELAN1300:00 04F3:3087 Touchpad" "libinput Tapping Enabled" 1
+exec xinput set-prop "SYNA7DB5:01 06CB:CD41 Touchpad" "libinput Tapping Enabled" 1
 
 bindsym $mod+t exec gnome-terminal
 bindsym $mod+m exec firefox
@@ -254,17 +254,20 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 
 ## Monitor
 bindsym Ctrl+Shift+D exec xrandr --output HDMI-1 --mode 1920x1080 --rate 60.00 --right-of eDP-1
-bindsym Ctrl+Shift+F exec xrandr --output HDMI-1 --off
+bindsym Ctrl+Shift+G exec xrandr --output HDMI-1-0 --mode 1920x1080 --right-of eDP-1  --rotate left;  exec xrandr --output DP-1 --mode 1920x1080 --right-of HDMI-1-0
+bindsym Ctrl+Shift+F exec xrandr --output HDMI-1-0 --off; exec  xrandr --output DP-1 --off;
+
+
 
 
 #custom
 
-for_window [title=" * esp32master - Visual Studio Code"] move --no-auto-back-and-forth container to workspace number $ws1
+#for_window [title=" * esp32master - Visual Studio Code"] move --no-auto-back-and-forth container to workspace number $ws1
 
-for_window [title=" * esp32slave - Visual Studio Code"] move --no-auto-back-and-forth container to workspace number $ws2
+#for_window [title=" * esp32slave - Visual Studio Code"] move --no-auto-back-and-forth container to workspace number $ws2
 
-for_window [title=" * rpi - Visual Studio Code"] move --no-auto-back-and-forth container to workspace number $ws3
+#for_window [title=" * rpi - Visual Studio Code"] move --no-auto-back-and-forth container to workspace number $ws3
 
-bindsym $mod+c Workspace number $ws1 exec kitty -e /home/yui/hacklab/TestBench/firmware/e32mstr/esp32master ;  exec kitty -e code /home/yui/hacklab/TestBench/firmware/e32mstr/esp32master ; Workspace number $ws2 exec kitty -e /home/yui/hacklab/TestBench/firmware/e32slv/esp32slave ; exec kitty -e code /home/yui/hacklab/TestBench/firmware/e32slv/esp32slave; Workspace number $ws3 exec kitty -e /home/yui/hacklab/TestBench/firmware/rpi ; exec kitty -e code /home/yui/hacklab/TestBench/firmware/rpi
+# bindsym $mod+c Workspace number $ws1 exec kitty -e /home/yui/hacklab/TestBench/firmware/e32mstr/esp32master ;  exec kitty -e code /home/yui/hacklab/TestBench/firmware/e32mstr/esp32master ; Workspace number $ws2 exec kitty -e /home/yui/hacklab/TestBench/firmware/e32slv/esp32slave ; exec kitty -e code /home/yui/hacklab/TestBench/firmware/e32slv/esp32slave; Workspace number $ws3 exec kitty -e /home/yui/hacklab/TestBench/firmware/rpi ; exec kitty -e code /home/yui/hacklab/TestBench/firmware/rpi
 
 
