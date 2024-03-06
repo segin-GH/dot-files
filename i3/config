@@ -216,9 +216,10 @@ colors {
 
 exec_always nitrogen --restore
 
-#exec_always redshift -P -O  3500
+exec_always redshift -P -O  3500
 
 exec xinput set-prop "SYNA7DB5:01 06CB:CD41 Touchpad" "libinput Tapping Enabled" 1
+exec xinput set-prop "ELAN1300:00 04F3:3087 Touchpad" "libinput Tapping Enabled" 1
 
 bindsym $mod+t exec gnome-terminal
 bindsym $mod+m exec firefox
