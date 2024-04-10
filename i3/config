@@ -10,6 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -216,15 +217,15 @@ colors {
 
 exec_always nitrogen --restore
 
-exec_always redshift -P -O  3500
+exec_always redshift -P -O  4000
 
 exec xinput set-prop "SYNA7DB5:01 06CB:CD41 Touchpad" "libinput Tapping Enabled" 1
 exec xinput set-prop "ELAN1300:00 04F3:3087 Touchpad" "libinput Tapping Enabled" 1
 
-bindsym $mod+t exec gnome-terminal
+#bindsym $mod+t exec gnome-terminal
 bindsym $mod+m exec firefox
 bindsym $mod+b Workspace number $ws10 exec firefox
-bindsym $mod+n exec nautilus
+#bindsym $mod+n exec nautilus
 
 # Disable/Enable Touchpad
 bindsym $mod+F11 exec xinput disable 11
@@ -272,3 +273,22 @@ bindsym Ctrl+Shift+F exec xrandr --output HDMI-1-0 --off; exec  xrandr --output 
 # bindsym $mod+c Workspace number $ws1 exec kitty -e /home/yui/hacklab/TestBench/firmware/e32mstr/esp32master ;  exec kitty -e code /home/yui/hacklab/TestBench/firmware/e32mstr/esp32master ; Workspace number $ws2 exec kitty -e /home/yui/hacklab/TestBench/firmware/e32slv/esp32slave ; exec kitty -e code /home/yui/hacklab/TestBench/firmware/e32slv/esp32slave; Workspace number $ws3 exec kitty -e /home/yui/hacklab/TestBench/firmware/rpi ; exec kitty -e code /home/yui/hacklab/TestBench/firmware/rpi
 
 
+
+## Scratchpad
+
+for_window [instance="termi"] floating enable
+for_window [instance="termi"] resize set 1080 720
+for_window [instance="termi"] move scratchpad
+for_window [instance="termi"] border pixel 5
+
+bindsym $mod+Shift+t exec kitty --name termi -e htop
+bindsym $mod+t  [instance="termi"] scratchpad show; [instance="termi"] move position center
+
+
+for_window [instance="notesi"] floating enable
+for_window [instance="notesi"] resize set 1080 720
+for_window [instance="notesi"] move scratchpad
+for_window [instance="notesi"] border pixel 5
+
+bindsym $mod+Shift+n exec  kitty --name notesi -e vim ~/.notes
+bindsym $mod+n  [instance="notesi"] scratchpad show; [instance="notesi"] move position center
