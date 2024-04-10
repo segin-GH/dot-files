@@ -127,9 +127,11 @@ flash_and_monitor() {
 
 alias idfz="flash_and_monitor"
 alias idffmp1="idf.py -p /dev/ttyUSB1 flash monitor"
+alias idffmp2="idf.py -p /dev/ttyUSB2 flash monitor"
 alias idffm="idf.py flash monitor"
 alias idfm="idf.py -p /dev/ttyUSB0 monitor"
 alias idfm1="idf.py -p /dev/ttyUSB1 monitor"
+alias idfm2="idf.py -p /dev/ttyUSB2 monitor"
 alias clr="clear"
 alias eag="cd /home/yui/app/eagle-9.6.2; ./eagle"
 alias ovpn-conf="sudo openvpn --config Segin.ovpn"
