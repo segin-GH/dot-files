@@ -217,13 +217,13 @@ colors {
 
 exec_always nitrogen --restore
 
-exec_always redshift -P -O  4000
+exec_always redshift -P -O  3500
 
 exec xinput set-prop "SYNA7DB5:01 06CB:CD41 Touchpad" "libinput Tapping Enabled" 1
 exec xinput set-prop "ELAN1300:00 04F3:3087 Touchpad" "libinput Tapping Enabled" 1
 
 #bindsym $mod+t exec gnome-terminal
-bindsym $mod+m exec firefox
+
 bindsym $mod+b Workspace number $ws10 exec firefox
 #bindsym $mod+n exec nautilus
 
@@ -281,7 +281,7 @@ for_window [instance="termi"] resize set 1080 720
 for_window [instance="termi"] move scratchpad
 for_window [instance="termi"] border pixel 5
 
-bindsym $mod+Shift+t exec kitty --name termi -e htop
+bindsym $mod+Shift+t exec kitty --name termi 
 bindsym $mod+t  [instance="termi"] scratchpad show; [instance="termi"] move position center
 
 
@@ -292,3 +292,12 @@ for_window [instance="notesi"] border pixel 5
 
 bindsym $mod+Shift+n exec  kitty --name notesi -e vim ~/.notes
 bindsym $mod+n  [instance="notesi"] scratchpad show; [instance="notesi"] move position center
+
+
+for_window [instance="topi"] floating enable
+for_window [instance="topi"] resize set 1080 720
+for_window [instance="topi"] move scratchpad
+for_window [instance="topi"] border pixel 5
+
+bindsym $mod+Shift+u  exec kitty --name topi -e htop
+bindsym $mod+u  [instance="topi"] scratchpad show; [instance="topi"] move position center
