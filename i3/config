@@ -276,13 +276,13 @@ bindsym Ctrl+Shift+F exec xrandr --output HDMI-1-0 --off; exec  xrandr --output 
 
 ## Scratchpad
 
-for_window [instance="termi"] floating enable
-for_window [instance="termi"] resize set 1080 720
-for_window [instance="termi"] move scratchpad
-for_window [instance="termi"] border pixel 5
+for_window [instance="termz"] floating enable
+for_window [instance="termz"] resize set 1080 720
+for_window [instance="termz"] move scratchpad
+for_window [instance="termz"] border pixel 5
 
-bindsym $mod+Shift+t exec kitty --name termi 
-bindsym $mod+t  [instance="termi"] scratchpad show; [instance="termi"] move position center
+bindsym $mod+Shift+t exec kitty --name termz
+bindsym $mod+t  [instance="termz"] scratchpad show; [instance="termz"] move position center
 
 
 for_window [instance="notesi"] floating enable
@@ -301,3 +301,4 @@ for_window [instance="topi"] border pixel 5
 
 bindsym $mod+Shift+u  exec kitty --name topi -e htop
 bindsym $mod+u  [instance="topi"] scratchpad show; [instance="topi"] move position center
+
