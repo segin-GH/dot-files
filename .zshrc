@@ -114,27 +114,52 @@ alias gloc="git config user.name segin-hls ; git config user.email segin@hacklab
 alias jnb="jupyter notebook"
 alias jlb="jupyter lab"
 alias b="byobu"
+
+## ESP-IDF aliases
+
 alias idf_v4.4=". $HOME/esp/esp-idf/export.sh"
 alias idf_v5.0=". $HOME/esp/esp-idf-v5.0/export.sh"
-alias idf="idf.py"
-alias idfb="idf.py build"
-alias idffmp="idf.py -p /dev/ttyUSB0 flash monitor"
 
-flash_and_monitor() {
-    idf.py -p /dev/ttyUSB0 flash
-    python3 ~/hspl/hspl_log_formatter.py
+# HSPL monitor function
+hspl_monitor() {
+    python3 ~/hspl/hspl_log_formatter.py -b 115200 -d "/dev/ttyUSB${1:-0}"
 }
 
-alias idfz="flash_and_monitor"
-alias idffmp1="idf.py -p /dev/ttyUSB1 flash monitor"
-alias idffmp2="idf.py -p /dev/ttyUSB2 flash monitor"
-alias idffm="idf.py flash monitor"
-alias idfm="idf.py -p /dev/ttyUSB0 monitor"
-alias idfm1="idf.py -p /dev/ttyUSB1 monitor"
-alias idfm2="idf.py -p /dev/ttyUSB2 monitor"
+# Function to open HSPL monitor on a specified or default USB port
+idfhm() {
+    local port=${1:-0}  # Default to USB0 if no port is specified
+    hspl_monitor $port
+}
+
+# Flash using idf.py on a specific USB port and then run HSPL monitor
+idffmp() {
+    local port=${1:-0}  # Default to USB0 if no port is specified
+    idf.py -p "/dev/ttyUSB${port}" flash && hspl_monitor $port
+}
+
+# Aliases for build and other frequently used commands
+alias idf="idf.py"
+alias idfb="idf.py build"
+
+# Function to monitor using idf.py on a specific USB port
+idfm() {
+    local port=${1:-0}  # Default to USB0 if no port is specified
+    idf.py -p "/dev/ttyUSB${port}" monitor
+}
+
+# Usage:
+# idffmp     - Flashes and runs HSPL monitor on /dev/ttyUSB0
+# idffmp 1   - Flashes and runs HSPL monitor on /dev/ttyUSB1
+# idfhm      - Opens HSPL monitor on /dev/ttyUSB0
+# idfhm 1    - Opens HSPL monitor on /dev/ttyUSB1
+# idfm       - Monitor on default /dev/ttyUSB0
+# idfm 1     - Monitor on /dev/ttyUSB1
+# idf        - Directly run idf.py commands, such as idf menuconfig
+# idfb       - Build the project using idf.py build
+
+
 alias clr="clear"
 alias eag="cd /home/yui/app/eagle-9.6.2; ./eagle"
-alias ovpn-conf="sudo openvpn --config Segin.ovpn"
 
 
 git_commit() {
@@ -202,5 +227,6 @@ export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -prin
 export TERM=xterm-256color
 
 # the fuck
+
 eval $(thefuck --alias)
 eval $(thefuck --alias fk)
