@@ -106,9 +106,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vim='vim'
+alias vim='nvim'
 set -o vi
-export EDITOR='vim'
+export EDITOR='nvim'
 
 alias gloc="git config user.name segin-hls ; git config user.email segin@hacklab.solutions"
 alias jnb="jupyter notebook"
@@ -197,11 +197,6 @@ alias catcsv="~/code/pythonScripts/csvTabulatePrint.py"
 alias server="~/code/pythonScripts/pythonServer.py"
 alias lip="~/code/pythonScripts/lip.py"
 alias d="sudo docker"
-alias dps="sudo docker ps"
-alias tr="tree"
-alias t="tail"
-alias h="head"
-
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -230,3 +225,7 @@ export TERM=xterm-256color
 
 eval $(thefuck --alias)
 eval $(thefuck --alias fk)
+
+# nvim 
+
+export PATH="$PATH:/opt/nvim-linux64/bin"
