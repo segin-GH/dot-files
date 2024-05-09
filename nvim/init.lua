@@ -15,6 +15,10 @@ vim.g.have_nerd_font = true
 
 -- Make line numbers default
 vim.opt.number = true
+
+-- Disable line wrapping
+vim.opt.wrap = false
+
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
 vim.opt.relativenumber = true
@@ -79,6 +83,10 @@ vim.opt.shiftwidth = 4 -- Number of spaces to use for autoindent
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
 
+-- spell checking
+vim.opt.spelllang = "en_us"
+vim.opt.spell = true
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -121,6 +129,9 @@ vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
 vim.keymap.set("i", "<A-j>", ":m .+1<CR>==gi")
 vim.keymap.set("i", "<A-k>", ":m .-2<CR>==gi")
+
+vim.api.nvim_set_keymap("n", "zl", "zL", { noremap = true })
+vim.api.nvim_set_keymap("n", "zh", "zH", { noremap = true })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
