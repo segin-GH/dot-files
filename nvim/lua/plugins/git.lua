@@ -69,10 +69,12 @@ return {
 		end,
 	},
 
-	{ -- fugitive
-		"tpope/vim-fugitive",
-		config = function()
-			vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
-		end,
+	{
+		"NeogitOrg/neogit",
+		dependencies = {
+			"nvim-lua/plenary.nvim", -- required
+			"sindrets/diffview.nvim", -- optional - Diff integration
+		},
+		config = true,
 	},
 }
