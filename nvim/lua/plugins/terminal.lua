@@ -10,7 +10,7 @@ return {
 			shell = vim.o.shell,
 			auto_scroll = true,
 			shade_terminals = true,
-			shading_factor = 3,
+			shading_factor = 10,
 			start_in_insert = true,
 			insert_mappings = true,
 			terminal_mappings = true,
@@ -20,5 +20,14 @@ return {
 				border = "curved",
 			},
 		})
+
+		local Terminal = require("toggleterm.terminal").Terminal
+		local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+
+		function _lazygit_toggle()
+			lazygit:toggle()
+		end
+
+		vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
 	end,
 }

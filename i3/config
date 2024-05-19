@@ -296,7 +296,7 @@ for_window [instance="notesi"] resize set 1080 720
 for_window [instance="notesi"] move scratchpad
 for_window [instance="notesi"] border pixel 5
 
-bindsym $mod+Shift+n exec  kitty --name notesi -e vim ~/.notes
+bindsym $mod+Shift+n exec  kitty --name notesi -e nvim ~/.notes
 bindsym $mod+n  [instance="notesi"] scratchpad show; [instance="notesi"] move position center
 
 
