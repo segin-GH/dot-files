@@ -122,7 +122,7 @@ alias idf_v5.0=". $HOME/esp/esp-idf-v5.0/export.sh"
 
 # HSPL monitor function
 hspl_monitor() {
-    python3 ~/hspl/hspl_log_formatter.py -b 115200 -d "/dev/ttyUSB${1:-0}"
+    python3 ~/hspl/hspl_log_formatter.py -s "/dev/ttyUSB${1:-0}" -b 115200 -t "serial";
 }
 
 # Function to open HSPL monitor on a specified or default USB port
@@ -194,9 +194,9 @@ alias grepr="grep -rin"
 alias grep="grep --color=auto"
 alias get_tb="export PATH=\"/home/yui/hacklab/TestBench/firmware/rpi:\$PATH\""
 alias catcsv="~/code/pythonScripts/csvTabulatePrint.py"
+alias cat="batcat"
 alias server="~/code/pythonScripts/pythonServer.py"
 alias lip="~/code/pythonScripts/lip.py"
-alias d="sudo docker"
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
