@@ -130,6 +130,11 @@ vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
 vim.keymap.set("i", "<A-j>", ":m .+1<CR>==gi")
 vim.keymap.set("i", "<A-k>", ":m .-2<CR>==gi")
 
+vim.keymap.set("n", "<M-,>", "<c-w>5<")
+vim.keymap.set("n", "<M-.>", "<c-w>5>")
+vim.keymap.set("n", "<M-t>", "<C-W>+")
+vim.keymap.set("n", "<M-s>", "<C-W>-")
+
 vim.api.nvim_set_keymap("n", "zl", "zL", { noremap = true })
 vim.api.nvim_set_keymap("n", "zh", "zH", { noremap = true })
 
