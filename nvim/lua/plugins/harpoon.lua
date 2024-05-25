@@ -28,14 +28,14 @@ return {
 		end
 
 		vim.keymap.set("n", "<C-e>", function()
-			harpoon.ui:toggle_quick_menu(harpoon:list())
+			toggle_telescope(harpoon:list())
 		end)
 
 		vim.keymap.set("n", "<A-a>", function()
 			harpoon:list():add()
 		end)
 		vim.keymap.set("n", "<A-e>", function()
-			toggle_telescope(harpoon:list())
+			harpoon.ui:toggle_quick_menu(harpoon:list())
 		end)
 
 		for i = 1, 10 do
