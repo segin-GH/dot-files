@@ -198,19 +198,11 @@ alias cat="batcat"
 alias server="~/code/pythonScripts/pythonServer.py"
 alias lip="~/code/pythonScripts/lip.py"
 alias g="lazygit"
+alias t="tmux -u"
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-if command -v pyenv 1>/dev/null 2>&1; then
- eval "$(pyenv init -)"
-fi
-if command -v pyenv 1>/dev/null 2>&1; then
- eval "$(pyenv init -)"
-fi
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
 
 
 #fzf
@@ -233,3 +225,12 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 
 # cargo
 . "$HOME/.cargo/env"
+
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+alias op='source /home/aya/openpilot/tools/op.sh "$@"'

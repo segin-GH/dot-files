@@ -259,8 +259,8 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 
 ## Monitor
 bindsym Ctrl+Shift+D exec xrandr --output HDMI-1 --mode 1920x1080 --rate 60.00 --right-of eDP-1
-bindsym Ctrl+Shift+G exec xrandr --output HDMI-1-0 --mode 1920x1080 --right-of eDP-1  --rotate left;  exec xrandr --output DP-1 --mode 1920x1080 --right-of HDMI-1-0
-bindsym Ctrl+Shift+F exec xrandr --output HDMI-1-0 --off; exec  xrandr --output DP-1 --off;
+bindsym Ctrl+Shift+G exec xrandr --output eDP-1 --off --output HDMI-1-0 --mode 1920x1080 --primary --output DP-1 --mode 1920x1080 --right-of HDMI-1-0;
+bindsym Ctrl+Shift+F exec xrandr --output HDMI-1-0 --off; exec  xrandr --output DP-1 --off; exec xrandr --output eDP-1 --auto;
 
 
 #system mode

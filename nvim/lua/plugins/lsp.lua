@@ -256,6 +256,8 @@ return {
 				c = { "clang-format" },
 				cpp = { "clang-format" },
 				python = { "black" },
+				javascript = { "prettier" },
+				typescript = { "prettier" },
 			},
 		},
 	},
