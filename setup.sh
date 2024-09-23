@@ -15,20 +15,20 @@
 # sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop;
 # cp ~/.local/kitty.app/share/applications/kitty.desktop ~/Desktop;
 # sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/Desktop/kitty*.desktop;
- #sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/Desktop/kitty*.desktop;
+# sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/Desktop/kitty*.desktop;
 # gio set ~/Desktop/kitty*.desktop metadata::trusted true;
 # chmod a+x ~/Desktop/kitty*.desktop;
 
 ## CP FILES
 
-# cd ~/code/dot-files;
-# mkdir .config/i3;
-# cp config /home/yui/.config/i3;
-# mkdir -p  .vim/colors
-# cd .vim/colors
-# wget https://raw.githubusercontent.com/crusoexia/vim-monokai/master/colors/monokai.vim
-# cp .vimrc /home/yui/
-# cp current-theme.conf kitty.conf ~/.config/kitty
+#  cd ~/code/dot-files;
+#  mkdir .config/i3;
+#  cp config /home/yui/.config/i3;
+#  mkdir -p  .vim/colors
+#  cd .vim/colors
+#  wget https://raw.githubusercontent.com/crusoexia/vim-monokai/master/colors/monokai.vim
+#  cp .vimrc /home/yui/
+#  cp current-theme.conf kitty.conf ~/.config/kitty
 
 
 # ## I3 SETUP 
@@ -63,9 +63,9 @@
 
 # ## ZSH
 
- #sudo apt install zsh -y;
- # sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
- #sleep 1
+# sudo apt install zsh -y;
+# sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
+# sleep 1
 # sudo apt update;
 # cp ~/code/dot-files/.zshrc  /home/yui/;
 # git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k;

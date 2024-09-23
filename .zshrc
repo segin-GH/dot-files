@@ -110,7 +110,7 @@ alias vim='nvim'
 set -o vi
 export EDITOR='nvim'
 
-alias gloc="git config user.name segin-hls ; git config user.email segin@hacklab.solutions"
+alias gloc="git config user.name segin-dz ; git config user.email seginipe@dozee.io"
 alias jnb="jupyter notebook"
 alias jlb="jupyter lab"
 alias b="byobu"
@@ -198,38 +198,35 @@ alias cat="batcat"
 alias server="~/code/pythonScripts/pythonServer.py"
 alias lip="~/code/pythonScripts/lip.py"
 alias g="lazygit"
+alias env_nrf="source ~/zephyrproject/.venv/bin/activate"
+alias get_nrf="source /home/seginipe/ncs/v2.4.1/zephyr/zephyr-env.sh && west zephyr-export"
+
+set_up_west () {
+    source ~/zephyrproject/.venv/bin/activate
+    source /home/seginipe/ncs/v2.4.1/zephyr/zephyr-env.sh && west zephyr-export
+}
+
+alias set_west="set_up_west"
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-if command -v pyenv 1>/dev/null 2>&1; then
- eval "$(pyenv init -)"
-fi
-if command -v pyenv 1>/dev/null 2>&1; then
- eval "$(pyenv init -)"
-fi
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
-
-#fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPS="--extended"
-export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
 
 # kitty support for ssh
-#
 export TERM=xterm-256color
 
 # the fuck
-
-eval $(thefuck --alias)
-eval $(thefuck --alias fk)
+# eval $(thefuck --alias)
+# eval $(thefuck --alias fk)
 
 # nvim 
-
 export PATH="$PATH:/opt/nvim-linux64/bin"
 
 # cargo
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PATH:$HOME/go/bin"
