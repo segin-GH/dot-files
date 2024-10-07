@@ -291,15 +291,15 @@ for_window [instance="esp32slave"] move --no-auto-back-and-forth container to wo
 
 for_window [instance="rpi"] move --no-auto-back-and-forth container to workspace number $ws3
 
-bindsym $mod+c workspace $ws1; \
-exec kitty -e ~/hspl/TestBench/firmware/e32mstr/esp32master; \
-exec kitty --name "esp32master" -e nvim ~/hspl/TestBench/firmware/e32mstr/esp32master; \
-workspace $ws2; \
-exec kitty -e ~/hspl/TestBench/firmware/e32slv/esp32slave; \
-exec kitty --name "esp32slave" -e nvim ~/hspl/TestBench/firmware/e32slv/esp32slave; \
-workspace $ws3; \
-exec kitty -e ~/hspl/TestBench/firmware/rpi; \
-exec kitty --name "rpi" -e nvim ~/hspl/TestBench/firmware/rpi;
+# bindsym $mod+c workspace $ws1; \
+# exec kitty -e ~/hspl/TestBench/firmware/e32mstr/esp32master; \
+# exec kitty --name "esp32master" -e nvim ~/hspl/TestBench/firmware/e32mstr/esp32master; \
+# workspace $ws2; \
+# exec kitty -e ~/hspl/TestBench/firmware/e32slv/esp32slave; \
+# exec kitty --name "esp32slave" -e nvim ~/hspl/TestBench/firmware/e32slv/esp32slave; \
+# workspace $ws3; \
+# exec kitty -e ~/hspl/TestBench/firmware/rpi; \
+# exec kitty --name "rpi" -e nvim ~/hspl/TestBench/firmware/rpi;
 
 ## Scratchpad
 
