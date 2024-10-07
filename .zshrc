@@ -121,18 +121,18 @@ alias idf_v4.4=". $HOME/esp/esp-idf/export.sh"
 alias idf_v5.0=". $HOME/esp/esp-idf-v5.0/export.sh"
 
 # HSPL monitor function
-hspl_monitor() {
+function hspl_monitor() {
     python3 ~/hspl/hspl_log_formatter.py -s "/dev/ttyUSB${1:-0}" -b 115200 -t "serial";
 }
 
 # Function to open HSPL monitor on a specified or default USB port
-idfhm() {
+function idfhm() {
     local port=${1:-0}  # Default to USB0 if no port is specified
     hspl_monitor $port
 }
 
 # Flash using idf.py on a specific USB port and then run HSPL monitor
-idffmp() {
+function idffmp() {
     local port=${1:-0}  # Default to USB0 if no port is specified
     idf.py -p "/dev/ttyUSB${port}" flash && hspl_monitor $port
 }
@@ -142,27 +142,49 @@ alias idf="idf.py"
 alias idfb="idf.py build"
 
 # Function to monitor using idf.py on a specific USB port
-idfm() {
+function idfm() {
     local port=${1:-0}  # Default to USB0 if no port is specified
     idf.py -p "/dev/ttyUSB${port}" monitor
 }
 
-# Usage:
-# idffmp     - Flashes and runs HSPL monitor on /dev/ttyUSB0
-# idffmp 1   - Flashes and runs HSPL monitor on /dev/ttyUSB1
-# idfhm      - Opens HSPL monitor on /dev/ttyUSB0
-# idfhm 1    - Opens HSPL monitor on /dev/ttyUSB1
-# idfm       - Monitor on default /dev/ttyUSB0
-# idfm 1     - Monitor on /dev/ttyUSB1
-# idf        - Directly run idf.py commands, such as idf menuconfig
-# idfb       - Build the project using idf.py build
+# WEST aliases
+set_up_west () {
+    local ncs_version=${1:-2.4.1} # Default to 2.4.1 if no version is specified
+    echo "Setting up west for ncs version $ncs_version"
+    source ~/zephyrproject/.venv/bin/activate
+    source ~/ncs/v${ncs_version}/zephyr/zephyr-env.sh && west zephyr-export
+}
 
+alias get_west="set_up_west";
 
-alias clr="clear"
-alias eag="cd /home/yui/app/eagle-9.6.2; ./eagle"
+function  west_build () {
+    command west build -d ./build -p -b nrf5340dk_nrf5340_cpuapp -- -DNCS_TOOLCHAIN_VERSION=2.4.4
+}
 
+alias wb="west_build"
 
-git_commit() {
+function  west_flash () {
+    command west flash -d ./build
+}
+
+alias wf="west_flash"
+alias wbf="west_build && west_flash"
+
+# alias for picocom
+function picu() {
+    local port=${1:-0}  # Default to USB0 if no argument is passed
+    picocom -b 115200 /dev/ttyUSB$port
+}
+
+function pica() {
+    local port=${1:-0}  # Default to ACM0 if no argument is passed
+    picocom -b 115200 /dev/ttyACM$port
+}
+
+alias pic="picu"
+alias pica="pica"
+
+function  git_commit() {
     if [ -z "$1" ]; then
         echo "No file to commit baka! :("
         return 1
@@ -183,7 +205,7 @@ git_commit() {
     return 0
 }
 
-
+alias clr="clear"
 alias gcmt="git_commit"
 alias upug="sudo apt-get update && sudo apt-get upgrade -y"
 alias py="python3"
@@ -194,19 +216,12 @@ alias grepr="grep -rin"
 alias grep="grep --color=auto"
 alias get_tb="export PATH=\"/home/yui/hacklab/TestBench/firmware/rpi:\$PATH\""
 alias catcsv="~/code/pythonScripts/csvTabulatePrint.py"
-alias cat="batcat"
+alias bat="batcat"
 alias server="~/code/pythonScripts/pythonServer.py"
 alias lip="~/code/pythonScripts/lip.py"
 alias g="lazygit"
 alias env_nrf="source ~/zephyrproject/.venv/bin/activate"
 alias get_nrf="source /home/seginipe/ncs/v2.4.1/zephyr/zephyr-env.sh && west zephyr-export"
-
-set_up_west () {
-    source ~/zephyrproject/.venv/bin/activate
-    source /home/seginipe/ncs/v2.4.1/zephyr/zephyr-env.sh && west zephyr-export
-}
-
-alias set_west="set_up_west"
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
