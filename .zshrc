@@ -117,29 +117,17 @@ alias b="byobu"
 
 ## ESP-IDF aliases
 
-alias idf_v4.4=". $HOME/esp/esp-idf/export.sh"
-alias idf_v5.0=". $HOME/esp/esp-idf-v5.0/export.sh"
-
-# HSPL monitor function
-function hspl_monitor() {
-    python3 ~/hspl/hspl_log_formatter.py -s "/dev/ttyUSB${1:-0}" -b 115200 -t "serial";
-}
-
-# Function to open HSPL monitor on a specified or default USB port
-function idfhm() {
-    local port=${1:-0}  # Default to USB0 if no port is specified
-    hspl_monitor $port
-}
+alias get_idf=". $HOME/esp/esp-idf/export.sh"
+alias idf_v5.0=". $HOME/esp/esp-idf-v5.0/export.sh"S
+# Aliases for build and other frequently used commands
+alias idf="idf.py"
+alias idfb="idf.py build"
 
 # Flash using idf.py on a specific USB port and then run HSPL monitor
 function idffmp() {
     local port=${1:-0}  # Default to USB0 if no port is specified
     idf.py -p "/dev/ttyUSB${port}" flash && hspl_monitor $port
 }
-
-# Aliases for build and other frequently used commands
-alias idf="idf.py"
-alias idfb="idf.py build"
 
 # Function to monitor using idf.py on a specific USB port
 function idfm() {
@@ -149,7 +137,7 @@ function idfm() {
 
 # WEST aliases
 set_up_west () {
-    local ncs_version=${1:-2.4.1} # Default to 2.4.1 if no version is specified
+    local ncs_version=${1:-2.7.0} # Default to 2.4.1 if no version is specified
     echo "Setting up west for ncs version $ncs_version"
     source ~/zephyrproject/.venv/bin/activate
     source ~/ncs/v${ncs_version}/zephyr/zephyr-env.sh && west zephyr-export
@@ -157,11 +145,15 @@ set_up_west () {
 
 alias get_west="set_up_west";
 
-function  west_build () {
-    command west build -d ./build -p -b nrf5340dk_nrf5340_cpuapp -- -DNCS_TOOLCHAIN_VERSION=2.4.4
+function west_build() {
+    local board_type=${1:-nrf5340dk_nrf5340_cpuapp}  
+    command west build -d ./build -p -b "$board_type" -- -DNCS_TOOLCHAIN_VERSION=2.7.0
 }
 
 alias wb="west_build"
+alias wb_nrf53="west_build nrf5340dk_nrf5340_cpuapp"
+alias wb_nrf52="west_build nrf52840dk_nrf52840"
+alias wb_nrf70="west_build nrf7002dk/nrf5340/cpuapp/ns"
 
 function  west_flash () {
     command west flash -d ./build
@@ -169,6 +161,15 @@ function  west_flash () {
 
 alias wf="west_flash"
 alias wbf="west_build && west_flash"
+
+# Function to list all USB serial ports
+function ls_a() {
+    ls /dev/ttyACM* 
+}
+
+function ls_u() {
+    ls /dev/ttyUSB*
+}
 
 # alias for picocom
 function picu() {
@@ -205,10 +206,17 @@ function  git_commit() {
     return 0
 }
 
+function clang_format_all() {
+    # Format all the files in the folder ends with .c, .h, .cpp, .hpp
+    find . -type f -name "*.[ch]" -o -name "*.[ch]pp" | xargs clang-format -i
+
+}
+
 alias clr="clear"
 alias gcmt="git_commit"
 alias upug="sudo apt-get update && sudo apt-get upgrade -y"
 alias py="python3"
+alias pyt="pytest"
 alias gdh="git diff HEAD"
 alias gct="git commit -a -m\"$1\""
 alias bb="chromium"
@@ -222,6 +230,7 @@ alias lip="~/code/pythonScripts/lip.py"
 alias g="lazygit"
 alias env_nrf="source ~/zephyrproject/.venv/bin/activate"
 alias get_nrf="source /home/seginipe/ncs/v2.4.1/zephyr/zephyr-env.sh && west zephyr-export"
+alias tmux="tmux -u"
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
