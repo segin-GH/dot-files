@@ -20,5 +20,5 @@ return {
 		end
 	end,
 
-	vim.keymap.set("n", "<C-f>", "<Cmd>Neotree toggle dir=./ <CR>"),
+	vim.keymap.set("n", "<C-t>", "<Cmd>Neotree toggle dir=./ <CR>"),
 }
